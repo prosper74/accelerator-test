@@ -1,0 +1,133 @@
+.Services {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.Services p {
+  font-size: 0.9rem;
+  line-height: 2;
+  color: #1f2024c2;
+}
+
+.ServicesHeadingTexts {
+  margin-bottom: 4rem;
+}
+
+.ServicesHeadingTexts h4 {
+  color: #206ecf;
+}
+
+.ServicesHeadingTexts h1 {
+  color: #1f2024c2;
+  line-height: 2;
+}
+
+.ServicesContainer {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.ServicesContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: inherit;
+  padding: 0.9rem 0.8rem;
+  border-radius: 0.8rem;
+  box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.08);
+  transition: 0.5s;
+  color: #1f2024c2;
+}
+
+.FirstParagraph {
+  margin-bottom: 7px;
+  line-height: 1.4;
+}
+
+.SecondParagraph {
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+.HeaderContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.IconBox {
+  width: 31px;
+  height: 31px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #206ecf;
+  margin-right: 0.2rem;
+  padding: 6px;
+  border-radius: 18%;
+}
+
+.IconBox h3 {
+  font-size: 0.9rem;
+}
+
+.ServicesContent hr {
+  border-top: 1px solid #cbd6e2;
+  margin: 1.8rem 0;
+}
+
+.FeaturesList li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.FeaturesList div {
+  margin-right: 0.4rem;
+}
+
+.ServicesContent button {
+  width: 92%;
+  height: 40px;
+  margin: 1rem auto 0;
+  padding: 5px 0;
+  background: #206ecf;
+  font-size: 0.9rem;
+  color: white;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 340px) {
+  .Services {
+    padding: 4rem 0;
+  }
+
+  .ServicesContent {
+    padding: 1rem 1.5rem;
+  }
+
+  .IconBox,
+  .IconBox h3 {
+    margin-right: 1rem;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .ServicesContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 970px) {
+  .ServicesContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

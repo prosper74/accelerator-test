@@ -1,0 +1,55 @@
+.btnOutlineWhite {
+  height: 40px;
+  width: 70%;
+  margin: 0 auto;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.btnFillWhite {
+  background-color: #fff;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 40px;
+  width: 70%;
+  margin: auto;
+}
+
+.btnFillWhite:hover {
+  color: #206ecf;
+  background: rgb(234, 232, 232);
+}
+
+.btnFillBlue {
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #206ecf;
+  color: rgb(234, 232, 232);
+  border: 0;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 550px) {
+  .btnFillBlue,
+  .btnFillWhite,
+  .btnOutlineWhite {
+    width: 200px;
+  }
+  .btnFillBlue {
+    padding: 10px 14px;
+  }
+}
+
+@media screen and (min-width: 880px) {
+  .btnFillBlue,
+  .btnFillWhite,
+  .btnOutlineWhite {
+    width: 170px;
+  }
+  .btnFillBlue {
+    padding: 12px 16px;
+  }
+}
