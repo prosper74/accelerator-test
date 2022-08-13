@@ -5,20 +5,6 @@ import { FilledBtnWhite, FilledBtnBlue } from "components/Buttons";
 import * as styles from "./Showcase.module.css";
 
 function Showcase() {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.5,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1 },
-  };
 
   return (
     <div>
