@@ -1,17 +1,34 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import Image from "../images/logo.svg";
 
-function Seo({ title, description, author, image, pathName, keywords }: any) {
-  const allKeywords = keywords.map((keyword: any) => `"${keyword}"`);
+interface SeoProps {
+  title?: string;
+  description?: string;
+  author?: string;
+  image?: string;
+  pathName?: string;
+  keywords?: string[];
+}
+
+function Seo({
+  title = "AcceleratoApp",
+  description = "AcceleratorApp Innovation Community - Tools and community to facilitate innovation between all members of our community",
+  author = "AcceleratoApp",
+  image=Image,
+  pathName='/',
+  keywords = ['AcceleratoApp', 'Startup', 'Incubator'],
+}: SeoProps) {
+  const allKeywords = keywords.map((keyword: string) => `"${keyword}"`);
 
   return (
     <Helmet>
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-      />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+      <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossOrigin="true"
+      />
       <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
         rel="stylesheet"
@@ -20,7 +37,7 @@ function Seo({ title, description, author, image, pathName, keywords }: any) {
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet"
       />
-      <meta name="keywords" content={allKeywords} />
+      <meta name="keywords" content={allKeywords.toString()} />
       <meta name="author" content={author} />
       <title>{title}</title>
       <meta name="description" content={description} />
@@ -36,14 +53,10 @@ function Seo({ title, description, author, image, pathName, keywords }: any) {
 
       {/* Twitter Card tags */}
       <meta name="twitter:card" content="summary_large_image" />
-      {/* <meta name="twitter:creator" content={twitter} /> */}
+      <meta name="twitter:creator" content={author} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
-      <script
-        src="//code.tidio.co/j3hg0xzr83dee0dqk4glggm9n3vaabnj.js"
-        async
-      ></script>
     </Helmet>
   );
 }

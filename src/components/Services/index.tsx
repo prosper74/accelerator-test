@@ -32,7 +32,6 @@ function Services() {
               <ul className={style.FeaturesList}>
                 {d.listFeatures.map((items, i) => (
                   <li key={i}>
-                    {/* <img src="../../images/check_icon.svg" alt="Check icon" /> */}
                     <StaticImage
                       src="../../images/check_icon.svg"
                       alt="Site Global Language"
@@ -55,7 +54,6 @@ function Services() {
               >
                 Get Started
               </motion.button>
-              {/* <FilledBtnBlue link='/' content="Get Started" color="#fff" /> */}
             </div>
           ))}
         </div>

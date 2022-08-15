@@ -18,7 +18,6 @@ html {
 
 /* Header Styles */
 .logo {
-  width: 30%;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -140,35 +139,54 @@ html {
 /* End of Header Styles */
 
 /* Cookies Styles */
-.cokiesWrapper {
+.cookiesWrapper {
   position: fixed;
   bottom: 10px;
   left: 0;
   background-color: #f2f2f2;
   text-align: center;
-  width: 100%;
   padding: 10px;
+  color: #020202c4;
+  width: 100%;
+  font-size: .8rem;
 }
-.cokies {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 5px;
+.cookies {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.cookies a {
+  text-decoration: none;
+  color: #020202c4;
+}
+.cookiesInfo {
+  width: 100%;
 }
 .cookiesBtn {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
 }
 
-.cookiesBtn a {
+.cookiesBtn button {
   margin: 10px 0;
 }
+/* End of Cookies Styles */
 
 @media screen and (min-width: 350px) {
   .navs.responsive {
     width: 300px;
+  }
+
+  .cookiesBtn {
+    flex-direction: row;
+  }
+
+  .cookiesBtn button {
+    margin: 0 10px;
   }
 }
 
@@ -184,23 +202,15 @@ html {
     text-decoration: none;
     object-fit: contain;
   }
-  .cookiesBtn {
-    flex-direction: row;
-  }
-
-  .cookiesBtn a {
-    margin: 0 20px;
-  }
 }
 
 @media screen and (min-width: 880px) {
   .container {
     width: 85%;
   }
-  .cokies {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    align-items: center;
+  .cookies {
+    width: 100%;
+    flex-direction: row;
     text-align: left;
   }
 }
@@ -218,5 +228,11 @@ html {
   }
   .navs a {
     color: #fff;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .container {
+    width: 75%;
   }
 }

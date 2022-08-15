@@ -70,7 +70,7 @@ function Header() {
           <div className="bar2"></div>
         </div>
         <div className="navs container" id="topNav">
-          <Link to="#home" className="active">
+          <Link to="/" className="active">
             Community
           </Link>
           <Link to="/">Modules</Link>

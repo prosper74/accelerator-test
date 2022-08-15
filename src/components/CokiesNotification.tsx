@@ -1,28 +1,36 @@
 import React from "react";
-import { FilledBtnBlue, OutlinedBtnWhite } from "components/Buttons";
+import { FilledBtn, OutlinedBtn } from "components/Buttons";
+import { Link } from "gatsby";
 
 const CokiesNotification = ({ setDisplayCookies }: any) => {
   return (
-    <section className="cokiesWrapper">
-      <div className="container cokies">
-        <p>
-          By using this site on the AcceleratorApp network, you agree with our
-          use of cookies.
-        </p>
-        <div className="cookiesBtn">
-          <FilledBtnBlue
-            color="#fff"
-            content="Accept cookies"
-            handleClick={() => setDisplayCookies(false)}
-          />
-          <OutlinedBtnWhite
-            color="#206ecf"
-            content="Want to know more"
-            link="/"
-            border="#206ecf"
-          />
+    <section className="cookiesWrapper">
+      <div className="container">
+        <div className="cookies">
+          <p className="cookiesInfo">
+            By using this site on the AcceleratorApp network, you agree with our
+            use of cookies.
+          </p>
+          <div className="cookies">
+            <div className="cookiesBtn">
+              <FilledBtn
+                content="Accept cookies"
+                handleClick={() => setDisplayCookies(false)}
+                textColor="#fff"
+                bgColor="#206ecf"
+                smFullWidth={{ width: "150px" }}
+              />
+              <OutlinedBtn
+                content="Want to know more"
+                link="/"
+                textColor="#206ecf"
+                borderColor="#206ecf"
+                smFullWidth={{ width: "150px" }}
+              />
+            </div>
+            <Link to='/'>Read our Cookie Policy</Link>
+          </div>
         </div>
-        <p>Read our Cookie Policy</p>
       </div>
     </section>
   );
