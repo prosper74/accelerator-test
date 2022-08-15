@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "gatsby";
-import { motion } from "framer-motion";
 import * as styles from "./Button.module.css";
 
 interface BtnProps {
@@ -30,17 +29,31 @@ export const OutlinedBtn = ({
   return link ? (
     <button
       className={styles.BtnOutline}
-      style={{ color: textColor, borderColor: borderColor, borderRadius: curve || '5px', ...smFullWidth }}
+      style={{
+        color: textColor,
+        borderColor: borderColor,
+        borderRadius: curve || "5px",
+        ...smFullWidth,
+      }}
     >
-      <Link to={link} style={{ color: textColor }}>{icon}{content}</Link>
+      <Link to={link} style={{ color: textColor }}>
+        {icon}
+        {content}
+      </Link>
     </button>
   ) : (
     <button
       className={styles.BtnOutline}
-      style={{ color: textColor, borderColor: borderColor, borderRadius: curve || '5px', ...smFullWidth }}
+      style={{
+        color: textColor,
+        borderColor: borderColor,
+        borderRadius: curve || "5px",
+        ...smFullWidth,
+      }}
       onClick={handleClick}
     >
-      {icon}{content}
+      {icon}
+      {content}
     </button>
   );
 };
@@ -63,11 +76,14 @@ export const FilledBtn = ({
         color: textColor,
         borderColor: borderColor,
         backgroundColor: bgColor,
-        borderRadius: curve || '5px',
-        ...smFullWidth
+        borderRadius: curve || "5px",
+        ...smFullWidth,
       }}
     >
-      <Link to={link} style={{ color: textColor }}>{icon}{content}</Link>
+      <Link to={link} style={{ color: textColor }}>
+        {icon}
+        {content}
+      </Link>
     </button>
   ) : (
     <button
@@ -76,12 +92,13 @@ export const FilledBtn = ({
         color: textColor,
         borderColor: borderColor,
         backgroundColor: bgColor,
-        borderRadius: curve || '5px',
-        ...smFullWidth
+        borderRadius: curve || "5px",
+        ...smFullWidth,
       }}
       onClick={handleClick}
     >
-      {icon}{content}
+      {icon}
+      {content}
     </button>
   );
 };
