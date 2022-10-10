@@ -1,22 +1,23 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { motion } from "framer-motion";
-import { data } from "./ServicesData";
-import * as style from "./Services.module.css";
+import { data } from "./FeaturesData";
+import * as style from "./Features.module.css";
 
-function Services() {
+function Features() {
   return (
-    <section className={style.Services}>
+    <section className={style.Features}>
       <div className="container">
-        <div className={style.ServicesHeadingTexts}>
-          <h4>Community</h4>
-          <h1>Lorem ipsum dolor sit amet</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div className={style.FeaturesHeadingTexts}>
+          <h1>Features Integrated</h1>
+          <p>
+            Know all our features that we have for accelerate your business.
+          </p>
         </div>
 
-        <div className={style.ServicesContainer}>
+        <div className={style.FeaturesContainer}>
           {data.map((d) => (
-            <div className={style.ServicesContent} key={d.id}>
+            <div className={style.FeaturesContent} key={d.id}>
               <div className={style.HeaderContainer}>
                 <div className={style.IconBox}>
                   <img src={d.icon} alt={`${d.headerText} icon`} />
@@ -62,4 +63,4 @@ function Services() {
   );
 }
 
-export default Services;
+export default Features;

@@ -4,6 +4,7 @@ import Seo from "components/Seo";
 import Showcase from "components/Showcase";
 import Charts from "components/Charts";
 import Services from "components/Services";
+import Features from "components/Features";
 
 const IndexPage = () => {
   return (
@@ -12,6 +13,7 @@ const IndexPage = () => {
       <Showcase />
       <Charts />
       <Services />
+      <Features />
     </>
   );
 };

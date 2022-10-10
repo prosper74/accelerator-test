@@ -21,6 +21,14 @@ const config: GatsbyConfig = {
       __key: "images",
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "features",
+        path: `${__dirname}/src/images/features`,
+        __key: "features",
+      }
+    },
+    {
       resolve: 'gatsby-plugin-root-import',
       options: {
         "components": path.join(__dirname, "src/components"),

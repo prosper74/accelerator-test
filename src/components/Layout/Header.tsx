@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+// import { StaticImage } from "gatsby-plugin-image";
+import LogoImage from "../../images/logo.svg";
 
 function Header() {
   const toggleMobileMenu = () => {
@@ -17,13 +18,14 @@ function Header() {
   };
 
   const changeBackground = () => {
-    let topNavWrapper: HTMLElement | null = document.getElementById("topNavWrapper");
+    let topNavWrapper: HTMLElement | null =
+      document.getElementById("topNavWrapper");
     if (window.scrollY >= 90) {
       topNavWrapper ? (topNavWrapper.className = "topNavWrapper active") : "";
     } else {
       topNavWrapper ? (topNavWrapper.className = "topNavWrapper") : "";
     }
-  }
+  };
 
   const ensureNavIconIsHiddenOnLg = () => {
     const { innerWidth } = window;
@@ -33,32 +35,38 @@ function Header() {
       topNav ? (topNav.className = "navs") : "";
       navIcon ? (navIcon.className = "navIcon") : "";
     }
-  }
+  };
 
   useEffect(() => {
-    changeBackground()
-    // adding the event when scroll change Logo
+    changeBackground();
+    // adding the event when scroll change background
     window.addEventListener("scroll", changeBackground);
-  }, [])
+  }, []);
 
   useEffect(() => {
     ensureNavIconIsHiddenOnLg();
     // adding the event when resize to ensure NavIcon is hidden on large devices
     window.addEventListener("resize", ensureNavIconIsHiddenOnLg);
-  }, [])
+  }, []);
 
   return (
     <section className="topNavWrapper" id="topNavWrapper">
       <div className="container topNav">
         <a href="/" className="logo">
-          <StaticImage
+          <img
+            src={LogoImage}
+            alt="AcceleratorApp Logo"
+            width="35px"
+            height="35px"
+          />
+          {/* <StaticImage
             src="../../images/logo.svg"
             alt="AcceleratorApp Logo"
             placeholder="blurred"
             layout="fixed"
             width={35}
             height={35}
-          />
+          /> */}
           <span>AcceleratorApp</span>
         </a>
         <div
