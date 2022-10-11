@@ -1,7 +1,8 @@
 .BtnOutline {
   height: 40px;
-  width: 90%;
+  /* width: 90%; */
   margin: 0 auto;
+  padding: 0 14px;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid;
@@ -15,8 +16,9 @@
 
 .BtnFilled {
   height: 40px;
-  width: 90%;
+  /* width: 90%; */
   margin: 0 auto;
+  padding: 0 14px;
   cursor: pointer;
   border: 0;
   border-radius: 5px;

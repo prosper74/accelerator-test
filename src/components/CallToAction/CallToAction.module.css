@@ -1,0 +1,45 @@
+.ShowcaseContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0 8rem;
+}
+
+.ShowcaseContent {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.CenteredBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Intro {
+  font-size: 1rem;
+}
+
+.Title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0.8rem auto 2rem;
+  max-width: 90%;
+  line-height: 1.2;
+}
+
+@media screen and (min-width: 850px) {
+  .Intro {
+    font-size: 1.2rem;
+  }
+
+  .Title {
+    font-size: 2.5rem;
+    max-width: 80%;
+  }
+
+  .CenteredBtn {
+    flex-direction: row-reverse;
+  }
+}

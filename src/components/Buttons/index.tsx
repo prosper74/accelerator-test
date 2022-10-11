@@ -13,6 +13,8 @@ interface BtnProps {
   bgColor?: string;
   icon?: React.Component;
   smFullWidth?: any;
+  FontSize?: string;
+  fontWeight?: number;
   handleClick?: () => void;
 }
 
@@ -24,6 +26,8 @@ export const OutlinedBtn = ({
   curve,
   icon,
   smFullWidth,
+  FontSize,
+  fontWeight,
   handleClick,
 }: BtnProps) => {
   return link ? (
@@ -33,6 +37,8 @@ export const OutlinedBtn = ({
         color: textColor,
         borderColor: borderColor,
         borderRadius: curve || "5px",
+        fontSize: FontSize,
+        fontWeight: fontWeight,
         ...smFullWidth,
       }}
     >
@@ -48,6 +54,8 @@ export const OutlinedBtn = ({
         color: textColor,
         borderColor: borderColor,
         borderRadius: curve || "5px",
+        fontSize: FontSize,
+        fontWeight: fontWeight,
         ...smFullWidth,
       }}
       onClick={handleClick}
@@ -67,6 +75,8 @@ export const FilledBtn = ({
   curve,
   icon,
   smFullWidth,
+  FontSize,
+  fontWeight,
   handleClick,
 }: BtnProps) => {
   return link ? (
@@ -77,6 +87,8 @@ export const FilledBtn = ({
         borderColor: borderColor,
         backgroundColor: bgColor,
         borderRadius: curve || "5px",
+        fontSize: FontSize,
+        fontWeight: fontWeight,
         ...smFullWidth,
       }}
     >
@@ -93,6 +105,8 @@ export const FilledBtn = ({
         borderColor: borderColor,
         backgroundColor: bgColor,
         borderRadius: curve || "5px",
+        fontSize: FontSize,
+        fontWeight: fontWeight,
         ...smFullWidth,
       }}
       onClick={handleClick}

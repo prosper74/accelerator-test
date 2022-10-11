@@ -5,6 +5,7 @@ import Showcase from "components/Showcase";
 import Charts from "components/Charts";
 import Services from "components/Services";
 import Features from "components/Features";
+import CallToAction from "components/CallToAction";
 
 const IndexPage = () => {
   return (
@@ -14,6 +15,7 @@ const IndexPage = () => {
       <Charts />
       <Services />
       <Features />
+      <CallToAction />
     </>
   );
 };
