@@ -1,8 +1,8 @@
-import IncubatorIcon from "../../images/incubator_icon.svg"
-import CoporationIcon from "../../images/coporation_icon.svg"
-import InvestorIcon from "../../images/investor_icon.svg"
-import StartupIcon from "../../images/startup_icon.svg"
-import OpenChallengeIcon from "../../images/open_challenge_icon.svg"
+import IncubatorIcon from "../../images/incubator_icon.svg";
+import CoporationIcon from "../../images/coporation_icon.svg";
+import InvestorIcon from "../../images/investor_icon.svg";
+import StartupIcon from "../../images/startup_icon.svg";
+import OpenChallengeIcon from "../../images/open_challenge_icon.svg";
 
 export const data = [
   {
@@ -75,4 +75,4 @@ export const data = [
     ],
     icon: OpenChallengeIcon,
   },
-]
+];

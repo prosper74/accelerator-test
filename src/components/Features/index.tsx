@@ -1,62 +1,50 @@
 import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
-import { motion } from "framer-motion";
+import { useIsMedium } from "../hooks/mediaQuery";
 import { data } from "./FeaturesData";
+import ArrowForwardIcon from "../../images/arrow_forward_icon.svg";
 import * as style from "./Features.module.css";
 
 function Features() {
+  const isMedium = useIsMedium();
+
   return (
     <section className={style.Features}>
       <div className="container">
-        <div className={style.FeaturesHeadingTexts}>
-          <h1>Features Integrated</h1>
-          <p>
-            Know all our features that we have for accelerate your business.
-          </p>
-        </div>
+        <div className={style.FeaturesWrapper}>
+          <div className={style.FeaturesHeadingTexts}>
+            <h1>Features Integrated</h1>
+            <p>
+              Know all our features that we have for accelerate your business.
+            </p>
+          </div>
 
-        <div className={style.FeaturesContainer}>
-          {data.map((d) => (
-            <div className={style.FeaturesContent} key={d.id}>
-              <div className={style.HeaderContainer}>
-                <div className={style.IconBox}>
-                  <img src={d.icon} alt={`${d.headerText} icon`} />
+          {isMedium && (
+            <div className={style.FeaturesContainer}>
+              {data.map((d) => (
+                <div
+                  className={d.headerText !== "button" && style.FeaturesContent}
+                >
+                  <div className={style.IconBox}>
+                    {d.headerText !== "button" && (
+                      <img src={d.icon} alt={`${d.headerText} icon`} />
+                    )}
+                  </div>
+                  {d.headerText !== "button" ? (
+                    <h3>{d.headerText}</h3>
+                  ) : (
+                    <div className={style.FeaturesButton}>
+                      <button>
+                        Discover its functions &nbsp;
+                        <img src={ArrowForwardIcon} alt="Arrow forward icon" />
+                      </button>
+                    </div>
+                  )}
+
+                  <p className={style.Description}>{d.description}</p>
                 </div>
-                <h4>{d.headerText}</h4>
-              </div>
-
-              <p className={style.FirstParagraph}>{d.paragraph1}</p>
-              <p className={style.SecondParagraph}>{d.paragraph2}</p>
-              <hr />
-              <h5>Popular Features</h5>
-
-              <ul className={style.FeaturesList}>
-                {d.listFeatures.map((items, i) => (
-                  <li key={i}>
-                    <StaticImage
-                      src="../../images/check_icon.svg"
-                      alt="Site Global Language"
-                      placeholder="blurred"
-                      layout="fixed"
-                      width={15}
-                      height={15}
-                    />
-                    {items.item}
-                  </li>
-                ))}
-              </ul>
-
-              <motion.button
-                whileHover={{
-                  scale: 1.1,
-                  transition: { duration: 1 },
-                }}
-                whileTap={{ scale: 0.9 }}
-              >
-                Get Started
-              </motion.button>
+              ))}
             </div>
-          ))}
+          )}
         </div>
       </div>
     </section>

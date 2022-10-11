@@ -1,13 +1,15 @@
 .Features {
   width: 100%;
   height: auto;
-  margin: 0 auto;
-  padding: 3rem 0;
+  margin: 6rem auto;
+  padding: 1.5rem 0;
+  background-color: #f1f8f9;
+  position: relative;
 }
 
 .Features p {
   font-size: 0.9rem;
-  line-height: 2;
+  line-height: 1.5;
   color: #1f2024c2;
 }
 
@@ -15,13 +17,10 @@
   margin-bottom: 4rem;
 }
 
-.FeaturesHeadingTexts h4 {
-  color: #206ecf;
-}
-
 .FeaturesHeadingTexts h1 {
   color: #1f2024c2;
   line-height: 2;
+  font-size: 1.8rem;
 }
 
 .FeaturesContainer {
@@ -33,42 +32,25 @@
 .FeaturesContent {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background-color: inherit;
-  padding: 0.9rem 0.8rem;
+  background-color: white;
+  padding: 1rem 1rem 2rem;
   border-radius: 0.8rem;
-  box-shadow: 0px 8px 24px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 4px 16px 2px rgb(0 0 0 / 6%);
   transition: 0.5s;
   color: #1f2024c2;
 }
 
-.FirstParagraph {
-  margin-bottom: 7px;
-  line-height: 1.4;
+.FeaturesContent h3 {
+  margin: 2rem 0 0.5rem;
 }
 
-.SecondParagraph {
-  margin-bottom: 0;
-  line-height: 1.4;
-}
-
-.HeaderContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 1rem;
+.Description {
+  line-height: 1.5;
 }
 
 .IconBox {
-  width: 31px;
-  height: 31px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #206ecf;
-  margin-right: 0.2rem;
-  padding: 6px;
-  border-radius: 18%;
+  max-width: 30px;
+  height: 20px;
 }
 
 .IconBox h3 {
@@ -92,17 +74,23 @@
   margin-right: 0.4rem;
 }
 
-.FeaturesContent button {
-  width: 92%;
-  height: 40px;
-  margin: 1rem auto 0;
-  padding: 5px 0;
-  background: #206ecf;
+.FeaturesButton {
+  height: 165px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FeaturesButton button {
+  height: 30px;
+  padding: 0 15px;
+  background: white;
   font-size: 0.9rem;
-  color: white;
-  border: 0;
+  color: #206ecf;
+  border: 1.5px solid #206ecf;
   border-radius: 4px;
   cursor: pointer;
+  font-weight: 700;
 }
 
 @media screen and (min-width: 340px) {
@@ -111,7 +99,7 @@
   }
 
   .FeaturesContent {
-    padding: 1rem 1.5rem;
+    padding: 1rem 1rem 2.5rem;
   }
 
   .IconBox,
@@ -124,9 +112,24 @@
   .FeaturesContainer {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .FeaturesHeadingTexts h1 {
+    font-size: 2rem;
+  }
 }
 
-@media screen and (min-width: 970px) {
+@media screen and (min-width: 968px) {
+  .Features {
+    background: #f1f8f9;
+    padding-top: 2.5rem;
+    transform: skew(0deg, -5deg) translateY(-50px);
+  }
+
+  .FeaturesWrapper {
+    padding: 2.5rem 0;
+    transform: skew(0deg, 5deg);
+  }
+
   .FeaturesContainer {
     grid-template-columns: repeat(3, 1fr);
   }
