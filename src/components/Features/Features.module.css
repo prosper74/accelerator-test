@@ -5,6 +5,12 @@
   padding: 1.5rem 0;
   background-color: #f1f8f9;
   position: relative;
+  transform: skew(0deg, -5deg) translateY(-50px);
+}
+
+.FeaturesWrapper {
+  padding: 2.5rem 0;
+  transform: skew(0deg, 5deg);
 }
 
 .Features p {
@@ -53,32 +59,20 @@
   height: 20px;
 }
 
-.IconBox h3 {
-  font-size: 0.9rem;
-}
-
 .FeaturesContent hr {
   border-top: 1px solid #cbd6e2;
   margin: 1.8rem 0;
 }
 
-.FeaturesList li {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 1rem 0;
-  font-size: 0.9rem;
-}
-
-.FeaturesList div {
-  margin-right: 0.4rem;
-}
-
 .FeaturesButton {
-  height: 165px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.FeaturesButtonSM {
+  grid-column: span 2;
 }
 
 .FeaturesButton button {
@@ -91,6 +85,10 @@
   border-radius: 4px;
   cursor: pointer;
   font-weight: 700;
+}
+
+.FeaturesSliders {
+  margin: 1rem auto;
 }
 
 @media screen and (min-width: 340px) {
@@ -122,15 +120,18 @@
   .Features {
     background: #f1f8f9;
     padding-top: 2.5rem;
-    transform: skew(0deg, -5deg) translateY(-50px);
-  }
-
-  .FeaturesWrapper {
-    padding: 2.5rem 0;
-    transform: skew(0deg, 5deg);
+    /* transform: skew(0deg, -5deg) translateY(-50px); */
   }
 
   .FeaturesContainer {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .FeaturesButton {
+    height: 220px;
+  }
+
+  .FeaturesButtonSM {
+    grid-column: span 1;
   }
 }

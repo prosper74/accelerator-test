@@ -1,11 +1,16 @@
 import React from "react";
-import { useIsMedium } from "../hooks/mediaQuery";
+import classNames from "classnames";
+import { useIsMedium, useIsSmall } from "../Hooks/mediaQuery";
 import { data } from "./FeaturesData";
+import { FeaturesSlider } from "components/Sliders/FeaturesSlider";
 import ArrowForwardIcon from "../../images/arrow_forward_icon.svg";
 import * as style from "./Features.module.css";
 
 function Features() {
   const isMedium = useIsMedium();
+  const isSmall = useIsSmall();
+
+  const onlyFeatures = data.filter((item) => item.headerText !== "button");
 
   return (
     <section className={style.Features}>
@@ -18,7 +23,30 @@ function Features() {
             </p>
           </div>
 
-          {isMedium && (
+          {isSmall ? (
+            <div className={style.FeaturesContainer}>
+              {onlyFeatures.map((d) => (
+                <div className={style.FeaturesContent}>
+                  <div className={style.IconBox}>
+                    <img src={d.icon} alt={`${d.headerText} icon`} />
+                  </div>
+                  <h3>{d.headerText}</h3>
+                  <p className={style.Description}>{d.description}</p>
+                </div>
+              ))}
+              <div
+                className={classNames(
+                  style.FeaturesButton,
+                  style.FeaturesButtonSM
+                )}
+              >
+                <button>
+                  Discover its functions &nbsp;
+                  <img src={ArrowForwardIcon} alt="Arrow forward icon" />
+                </button>
+              </div>
+            </div>
+          ) : isMedium ? (
             <div className={style.FeaturesContainer}>
               {data.map((d) => (
                 <div
@@ -44,6 +72,24 @@ function Features() {
                 </div>
               ))}
             </div>
+          ) : (
+            <>
+              <div className={style.FeaturesSliders}>
+                <FeaturesSlider slides={onlyFeatures} />
+              </div>
+
+              <div
+                className={classNames(
+                  style.FeaturesButton,
+                  style.FeaturesButtonSM
+                )}
+              >
+                <button>
+                  Discover its functions &nbsp;
+                  <img src={ArrowForwardIcon} alt="Arrow forward icon" />
+                </button>
+              </div>
+            </>
           )}
         </div>
       </div>

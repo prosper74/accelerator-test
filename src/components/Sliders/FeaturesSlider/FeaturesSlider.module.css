@@ -1,0 +1,58 @@
+.SlidesWrapper {
+  position: relative;
+  margin-bottom: 5rem;
+  padding: 1rem 0;
+  transition: 0.5s;
+}
+
+.SlideRow {
+  display: flex;
+  transition: 0.5s;
+}
+
+.SlideContainer {
+  display: none;
+  height: 200px;
+  flex-direction: column;
+  background-color: white;
+  padding: 1rem 1rem 2rem;
+  border-radius: 0.8rem;
+  box-shadow: 0px 4px 16px 2px rgb(0 0 0 / 6%);
+  transition: 0.5s ease-in-out;
+  color: #1f2024c2;
+}
+
+.ActiveSlide {
+  display: flex;
+}
+
+.SlideContainer h3 {
+  margin: 2rem 0 0.5rem;
+}
+
+.IconBox {
+  max-width: 30px;
+  height: 20px;
+}
+
+.Indicator {
+  transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  bottom: -50px;
+}
+
+.IndicatorBtn {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 4px;
+  border-radius: 15px;
+  background: #206ecf;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.ActiveIndicator {
+  width: 20px;
+}
