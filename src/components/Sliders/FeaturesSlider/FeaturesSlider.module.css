@@ -7,7 +7,6 @@
 
 .SlideRow {
   display: flex;
-  transition: 0.5s;
 }
 
 .SlideContainer {
@@ -18,12 +17,38 @@
   padding: 1rem 1rem 2rem;
   border-radius: 0.8rem;
   box-shadow: 0px 4px 16px 2px rgb(0 0 0 / 6%);
-  transition: 0.5s ease-in-out;
   color: #1f2024c2;
 }
 
 .ActiveSlide {
   display: flex;
+  animation-duration: 0.5s;
+  animation-name: slidein;
+}
+
+.PreviousSlide {
+  animation-duration: 0.5s;
+  animation-name: slideout;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100px;
+  }
+
+  to {
+    margin-left: 0;
+  }
+}
+
+@keyframes slideout {
+  from {
+    margin-right: 100px;
+  }
+
+  to {
+    margin-right: 0;
+  }
 }
 
 .SlideContainer h3 {

@@ -39,18 +39,9 @@ export function FeaturesSlider({ slides }: SlidesProps) {
         {slides.map((slide: SlideProps, index: number) => (
           <div
             key={slide.id}
-            className={classNames(
-              style.SlideContainer,
-              {
-                [style.ActiveSlide]: activeIndicator === index,
-              }
-              // {
-              //   [style.SecondSlide]: activeIndicator === 1,
-              // },
-              // {
-              //   [style.ThirdSlide]: activeIndicator === 2,
-              // }
-            )}
+            className={classNames(style.SlideContainer, {
+              [style.ActiveSlide]: activeIndicator === index,
+            })}
           >
             <div className={style.IconBox}>
               <img src={slide.icon} alt={`${slide.headerText} icon`} />
