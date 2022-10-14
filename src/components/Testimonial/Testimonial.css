@@ -1,0 +1,133 @@
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 8rem;
+  /* padding: 3rem 0; */
+}
+
+.left-side {
+  flex-basis: 45%;
+}
+
+.right-side {
+  flex-basis: 55%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  box-shadow: 0px 4px 16px 2px rgb(0 0 0 / 6%);
+  transition: 0.5s;
+  color: #1f2024c2;
+  position: relative;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  max-width: 70%;
+  line-height: 1.1;
+}
+
+.testomonial-button {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.testomonial-button button {
+  height: 30px;
+  padding: 0 15px;
+  background: white;
+  font-size: 0.9rem;
+  color: #206ecf;
+  border: 1.5px solid #206ecf;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.testimonial-text,
+.testimonial-meta {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.testimonial-meta {
+  margin: 3rem 0;
+}
+
+.logo-image-box img {
+  max-width: 80px;
+}
+
+.user-image-box {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  right: 0;
+  bottom: -22%;
+  box-shadow: 0px 4px 16px 2px rgb(0 0 0 / 6%);
+}
+
+.user-image-box img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 0.8rem;
+  box-shadow: 0px 4px 16px 2px rgb(0 0 0 / 6%);
+}
+
+.slider-indicators {
+  transform: translateX(-50%);
+  position: absolute;
+  left: 30%;
+  bottom: -40px;
+}
+
+.indicator-button {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 4px;
+  border-radius: 15px;
+  border: 1px solid #206ecf;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.active-indicator {
+  background: #206ecf;
+  width: 14px;
+}
+
+@media screen and (min-width: 512px) {
+  .user-image-box {
+    bottom: -25%;
+  }
+
+  .slider-indicators {
+    left: 40%;
+  }
+}
+
+@media screen and (min-width: 970px) {
+  .testimonial {
+    flex-direction: row;
+  }
+
+  .left-side {
+    margin-right: 1.5rem;
+    padding: 2rem 0;
+  }
+
+  .right-side {
+    padding: 2rem;
+  }
+
+  .testimonial-meta {
+    margin: 2.5rem 0;
+  }
+}
