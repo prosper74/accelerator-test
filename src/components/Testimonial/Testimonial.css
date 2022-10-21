@@ -3,30 +3,36 @@
   flex-direction: column;
   align-items: stretch;
   width: 100%;
-  height: auto;
-  margin: 0 auto 8rem;
-  /* padding: 3rem 0; */
+  height: 450px;
+  margin: 0 auto 13rem;
 }
 
 .left-side {
-  flex-basis: 45%;
+  flex-basis: 25%;
 }
 
 .right-side {
   flex-basis: 55%;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+.testimonial-container {
+  display: flex;
+}
+
+.testimonial-item {
   background-color: white;
   padding: 1rem;
   border-radius: 0.8rem;
-  box-shadow: 0px 4px 16px 2px rgb(0 0 0 / 6%);
-  transition: 0.5s;
+  box-shadow: 0px 4px 20px 2px rgb(0 0 0 / 9%);
   color: #1f2024c2;
-  position: relative;
+  position: absolute;
 }
 
 .title {
   font-size: 2.5rem;
   font-weight: 600;
-  max-width: 70%;
   line-height: 1.1;
 }
 
@@ -34,14 +40,15 @@
   height: 50px;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
+  margin: -4rem 0 4rem;
 }
 
 .testomonial-button button {
   height: 30px;
   padding: 0 15px;
   background: white;
-  font-size: 0.9rem;
+  font-size: 11px;
   color: #206ecf;
   border: 1.5px solid #206ecf;
   border-radius: 4px;
@@ -84,7 +91,8 @@
   transform: translateX(-50%);
   position: absolute;
   left: 30%;
-  bottom: -40px;
+  bottom: -10rem;
+  z-index: 2;
 }
 
 .indicator-button {
@@ -116,15 +124,23 @@
 @media screen and (min-width: 970px) {
   .testimonial {
     flex-direction: row;
+    height: auto;
+    margin: 0 auto 15rem;
   }
 
   .left-side {
+    flex-basis: 45%;
     margin-right: 1.5rem;
     padding: 2rem 0;
   }
 
-  .right-side {
-    padding: 2rem;
+  .title {
+    max-width: 70%;
+  }
+
+  .testomonial-button {
+    justify-content: flex-start;
+    margin: 0;
   }
 
   .testimonial-meta {

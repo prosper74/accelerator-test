@@ -8,7 +8,8 @@
 
 html {
   font-size: 14px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
@@ -148,7 +149,7 @@ html {
   padding: 10px;
   color: #020202c4;
   width: 100%;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 .cookies {
   width: 100%;

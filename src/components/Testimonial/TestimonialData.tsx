@@ -1,5 +1,6 @@
 import LogoImage from "../../images/testimonials/testimonial_logo.png";
 import UserImage from "../../images/testimonials/user_image.jpg";
+import JohnDoe from "../../images/testimonials/user_image2.jpg";
 
 export const data = [
   {
@@ -20,7 +21,7 @@ export const data = [
     position: "HR",
     organization: "ActiveX",
     logo: LogoImage,
-    image: UserImage,
+    image: JohnDoe,
   },
   {
     id: 3,
@@ -40,6 +41,6 @@ export const data = [
     position: "Head of Operations",
     organization: "Startup Code",
     logo: LogoImage,
-    image: UserImage,
+    image: JohnDoe,
   },
 ];

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-// import { OutlinedBtn } from "components/Buttons";
+import { motion, AnimatePresence } from "framer-motion";
+import { useIsMedium, useIsSmall } from "../Hooks/mediaQuery";
 import { data } from "./TestimonialData";
 import ArrowForwardIcon from "../../images/arrow_forward_icon.svg";
-import LogoImage from "../../images/testimonials/testimonial_logo.png";
-import UserImage from "../../images/testimonials/user_image.jpg";
 import "./Testimonial.css";
 
 interface SlideProps {
@@ -19,6 +18,8 @@ interface SlidesProps {
 }
 
 function Testimonials() {
+  const isMedium = useIsMedium();
+  const isSmall = useIsSmall();
   const [activeIndicator, setActiveIndicator] = useState(0);
 
   return (
@@ -26,12 +27,15 @@ function Testimonials() {
       <div className="testimonial">
         <div className="left-side">
           <h3 className="title">What our customers say</h3>
-          <div className="testomonial-button">
-            <button>
-              150 + incubators/accelerators using AcceleratorApp &nbsp;
-              <img src={ArrowForwardIcon} alt="Arrow forward icon" />
-            </button>
-          </div>
+
+          {isSmall && (
+            <div className="testomonial-button">
+              <button>
+                150 + incubators/accelerators using AcceleratorApp &nbsp;
+                <img src={ArrowForwardIcon} alt="Arrow forward icon" />
+              </button>
+            </div>
+          )}
         </div>
 
         <div className="right-side">
@@ -51,28 +55,50 @@ function Testimonials() {
             ))}
           </div>
 
-          <div className="testimonial-container">
-            <p className="testimonial-text">
-              AcceleratorApp has helped us a lot to accelerate and optimize our
-              application and selection process. We got very positive feedback
-              from our team and applicants. It’s a great tool for every company
-              reviewing and processing a large number of applications whilst
-              minimizing manual work. The tool is customizable, user-friendly
-              and the AcceleratorApp team is very responsive and supportive!
-            </p>
-            <p className="testimonial-meta">
-              François Jolly, Director of Programs{" "}
-              <strong>• Startup lab</strong>
-            </p>
-            <div className="logo-image-box">
-              <img src={LogoImage} alt="Company logo" />
-            </div>
-            <div className="user-image-box">
-              <img src={UserImage} alt="User Name" />
-            </div>
+          <div
+            className="testimonial-container"
+            style={{ transform: "translateX(-0%)" }}
+          >
+            {data.map((item, index) => (
+              <AnimatePresence>
+                {activeIndicator === index && (
+                  <motion.div
+                    key={item.id}
+                    className="testimonial-item"
+                    initial={{ x: !isSmall ? 10 : 100, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: !isSmall ? -10 : -100, opacity: 0 }}
+                  >
+                    <p className="testimonial-text">{item.bodyText}</p>
+                    <p className="testimonial-meta">
+                      {item.name}, {item.position}{" "}
+                      <strong>• {item.organization}</strong>
+                    </p>
+                    <motion.div
+                      className="logo-image-box"
+                      animate={{ scale: [0, 0.5, 1] }}
+                      transition={{ times: [0, 0.5, 1], delay: 0.2 }}
+                    >
+                      <img src={item.logo} alt="Company logo" />
+                    </motion.div>
+                    <div className="user-image-box">
+                      <img src={item.image} alt="User Name" />
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            ))}
           </div>
         </div>
       </div>
+      {!isSmall && (
+        <div className="testomonial-button">
+          <button>
+            150 + incubators/accelerators using AcceleratorApp &nbsp;
+            <img src={ArrowForwardIcon} alt="Arrow forward icon" />
+          </button>
+        </div>
+      )}
     </section>
   );
 }
