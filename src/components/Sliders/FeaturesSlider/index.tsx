@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useSwipeable } from "react-swipeable";
 import classNames from "classnames";
-// import { useIsMedium } from "../../Hooks/mediaQuery";
 import * as style from "./FeaturesSlider.module.css";
 
 interface SlideProps {
@@ -17,8 +17,18 @@ interface SlidesProps {
 }
 
 export function FeaturesSlider({ slides }: SlidesProps) {
-  // const isMedium = useIsMedium();
   const [activeIndicator, setActiveIndicator] = useState(0);
+
+  const handlers = useSwipeable({
+    onSwipedLeft: () =>
+      activeIndicator === slides.length - 1
+        ? setActiveIndicator(0)
+        : setActiveIndicator(activeIndicator + 1),
+    onSwipedRight: () =>
+      activeIndicator === 0
+        ? setActiveIndicator(slides.length - 1)
+        : setActiveIndicator(activeIndicator - 1),
+  });
 
   return (
     <div className={style.SlidesWrapper}>
@@ -36,7 +46,7 @@ export function FeaturesSlider({ slides }: SlidesProps) {
         ))}
       </div>
 
-      <div className={style.SlideRow}>
+      <div {...handlers} className={style.SlideRow}>
         {slides.map((slide: SlideProps, index: number) => (
           <AnimatePresence>
             {activeIndicator === index && (
