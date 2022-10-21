@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import classNames from "classnames";
 // import { useIsMedium } from "../../Hooks/mediaQuery";
 import * as style from "./FeaturesSlider.module.css";
@@ -37,18 +38,24 @@ export function FeaturesSlider({ slides }: SlidesProps) {
 
       <div className={style.SlideRow}>
         {slides.map((slide: SlideProps, index: number) => (
-          <div
-            key={slide.id}
-            className={classNames(style.SlideContainer, {
-              [style.ActiveSlide]: activeIndicator === index,
-            })}
-          >
-            <div className={style.IconBox}>
-              <img src={slide.icon} alt={`${slide.headerText} icon`} />
-            </div>
-            <h3>{slide.headerText}</h3>
-            <p>{slide.description}</p>
-          </div>
+          <AnimatePresence>
+            {activeIndicator === index && (
+              <motion.div
+                key={slide.id}
+                className={style.SlideContainer}
+                initial={{ x: 10, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -10, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className={style.IconBox}>
+                  <img src={slide.icon} alt={`${slide.headerText} icon`} />
+                </div>
+                <h3>{slide.headerText}</h3>
+                <p>{slide.description}</p>
+              </motion.div>
+            )}
+          </AnimatePresence>
         ))}
       </div>
     </div>

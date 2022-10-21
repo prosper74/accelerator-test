@@ -13,7 +13,7 @@
 
 .SlideContainer {
   position: absolute;
-  display: none;
+  /* display: none; */
   height: 200px;
   flex-direction: column;
   background-color: white;
@@ -24,11 +24,11 @@
 }
 
 .ActiveSlide {
-  display: flex;
-  animation-duration: 0.7s;
-  animation-name: slidein;
+  /* display: flex; */
+  /* animation-duration: 0.7s;
+  animation-name: slidein; */
 }
-
+/* 
 .PreviousSlide {
   animation-duration: 0.3s;
   animation-name: slideout;
@@ -52,7 +52,7 @@
   to {
     margin-right: 0;
   }
-}
+} */
 
 .SlideContainer h3 {
   margin: 2rem 0 0.5rem;
