@@ -6,4 +6,4 @@ Built with Gatsby JS
 
 ## Link
 
-Access App via: https://prosperatu.netlify.app
+Access App via: accelerator-test.netlify.app/

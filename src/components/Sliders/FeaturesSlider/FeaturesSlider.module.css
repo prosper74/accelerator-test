@@ -21,30 +21,6 @@
   box-shadow: 0px 4px 16px 2px rgb(0 0 0 / 6%);
   color: #1f2024c2;
 }
-.PreviousSlide {
-  animation-duration: 0.3s;
-  animation-name: slideout;
-}
-
-@keyframes slidein {
-  from {
-    left: -100px;
-  }
-
-  to {
-    left: 0;
-  }
-}
-
-@keyframes slideout {
-  from {
-    margin-right: 200px;
-  }
-
-  to {
-    margin-right: 0;
-  }
-} */
 
 .SlideContainer h3 {
   margin: 2rem 0 0.5rem;
