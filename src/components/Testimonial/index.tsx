@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
 import { useIsMedium, useIsSmall } from "../Hooks/mediaQuery";
+import { useSwipeable } from "react-swipeable";
 import { data } from "./TestimonialData";
 import ArrowForwardIcon from "../../images/arrow_forward_icon.svg";
 import "./Testimonial.css";
@@ -21,6 +23,28 @@ function Testimonials() {
   const isMedium = useIsMedium();
   const isSmall = useIsSmall();
   const [activeIndicator, setActiveIndicator] = useState(0);
+
+  // const handlers = useSwipeable({
+  //   onSwipedLeft: () =>
+  //     activeIndicator === data.length - 1
+  //       ? setActiveIndicator(0)
+  //       : setActiveIndicator(activeIndicator + 1),
+  //   onSwipedRight: () =>
+  //     activeIndicator === 0
+  //       ? setActiveIndicator(data.length - 1)
+  //       : setActiveIndicator(activeIndicator - 1),
+  // });
+
+  const handlers = useSwipeable({
+    onSwipedLeft: () =>
+      setActiveIndicator(
+        activeIndicator === data.length - 1 ? 0 : activeIndicator + 1
+      ),
+    onSwipedRight: () =>
+      setActiveIndicator(
+        activeIndicator === 0 ? data.length - 1 : activeIndicator - 1
+      ),
+  });
 
   return (
     <section className="container">
@@ -55,10 +79,7 @@ function Testimonials() {
             ))}
           </div>
 
-          <div
-            className="testimonial-container"
-            style={{ transform: "translateX(-0%)" }}
-          >
+          <div {...handlers} className="testimonial-container">
             {data.map((item, index) => (
               <AnimatePresence>
                 {activeIndicator === index && (

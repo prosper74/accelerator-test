@@ -10,6 +10,7 @@ interface SlideProps {
   description?: string;
   icon?: any;
   map?: any;
+  length?: number;
 }
 
 interface SlidesProps {
@@ -21,12 +22,12 @@ export function FeaturesSlider({ slides }: SlidesProps) {
 
   const handlers = useSwipeable({
     onSwipedLeft: () =>
-      activeIndicator === slides.length - 1
+      activeIndicator === slides.length! - 1
         ? setActiveIndicator(0)
         : setActiveIndicator(activeIndicator + 1),
     onSwipedRight: () =>
       activeIndicator === 0
-        ? setActiveIndicator(slides.length - 1)
+        ? setActiveIndicator(slides.length! - 1)
         : setActiveIndicator(activeIndicator - 1),
   });
 
