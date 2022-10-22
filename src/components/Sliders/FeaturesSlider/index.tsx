@@ -22,13 +22,13 @@ export function FeaturesSlider({ slides }: SlidesProps) {
 
   const handlers = useSwipeable({
     onSwipedLeft: () =>
-      activeIndicator === slides.length! - 1
-        ? setActiveIndicator(0)
-        : setActiveIndicator(activeIndicator + 1),
+      setActiveIndicator(
+        activeIndicator === slides.length! - 1 ? 0 : activeIndicator + 1
+      ),
     onSwipedRight: () =>
-      activeIndicator === 0
-        ? setActiveIndicator(slides.length! - 1)
-        : setActiveIndicator(activeIndicator - 1),
+      setActiveIndicator(
+        activeIndicator === 0 ? slides.length! - 1 : activeIndicator - 1
+      ),
   });
 
   return (
