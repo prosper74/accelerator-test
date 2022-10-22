@@ -24,17 +24,6 @@ function Testimonials() {
   const isSmall = useIsSmall();
   const [activeIndicator, setActiveIndicator] = useState(0);
 
-  // const handlers = useSwipeable({
-  //   onSwipedLeft: () =>
-  //     activeIndicator === data.length - 1
-  //       ? setActiveIndicator(0)
-  //       : setActiveIndicator(activeIndicator + 1),
-  //   onSwipedRight: () =>
-  //     activeIndicator === 0
-  //       ? setActiveIndicator(data.length - 1)
-  //       : setActiveIndicator(activeIndicator - 1),
-  // });
-
   const handlers = useSwipeable({
     onSwipedLeft: () =>
       setActiveIndicator(
@@ -44,6 +33,7 @@ function Testimonials() {
       setActiveIndicator(
         activeIndicator === 0 ? data.length - 1 : activeIndicator - 1
       ),
+    trackMouse: true,
   });
 
   return (
