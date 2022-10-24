@@ -29,6 +29,13 @@ const config: GatsbyConfig = {
       }
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'testimonials',
+        path: `./src/images/testimonials`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-root-import',
       options: {
         "components": path.join(__dirname, "src/components"),

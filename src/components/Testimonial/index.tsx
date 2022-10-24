@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import classNames from "classnames";
 
 import { useIsMedium, useIsSmall } from "../Hooks/mediaQuery";
 import { useSwipeable } from "react-swipeable";
 import { data } from "./TestimonialData";
 import ArrowForwardIcon from "../../images/arrow_forward_icon.svg";
-import "./Testimonial.css";
+import * as style from "./Testimonial.module.css";
 
 interface SlideProps {
   id?: number;
@@ -38,12 +39,12 @@ function Testimonials() {
 
   return (
     <section className="container">
-      <div className="testimonial">
-        <div className="left-side">
-          <h3 className="title">What our customers say</h3>
+      <div className={style.Testimonial}>
+        <div className={style.LeftSide}>
+          <h3 className={style.Title}>What our customers say</h3>
 
           {isSmall && (
-            <div className="testomonial-button">
+            <div className={style.TestimonialButton}>
               <button>
                 150 + incubators/accelerators using AcceleratorApp &nbsp;
                 <img src={ArrowForwardIcon} alt="Arrow forward icon" />
@@ -52,16 +53,14 @@ function Testimonials() {
           )}
         </div>
 
-        <div className="right-side">
-          <div className="slider-indicators">
+        <div className={style.RightSide}>
+          <div className={style.SliderIndicators}>
             {data.map((slide: SlideProps, index: number) => (
               <span
                 key={slide.id}
-                className={
-                  activeIndicator === index
-                    ? "indicator-button active-indicator"
-                    : "indicator-button"
-                }
+                className={classNames(style.IndicatorButton, {
+                  [style.ActiveIndicator]: activeIndicator === index,
+                })}
                 onClick={() => {
                   setActiveIndicator(index);
                 }}
@@ -69,30 +68,30 @@ function Testimonials() {
             ))}
           </div>
 
-          <div {...handlers} className="testimonial-container">
+          <div {...handlers} className={style.TestimonialContainer}>
             {data.map((item, index) => (
               <AnimatePresence>
                 {activeIndicator === index && (
                   <motion.div
                     key={item.id}
-                    className="testimonial-item"
+                    className={style.TestimonialItem}
                     initial={{ x: !isSmall ? 10 : 100, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ x: !isSmall ? -10 : -100, opacity: 0 }}
                   >
-                    <p className="testimonial-text">{item.bodyText}</p>
-                    <p className="testimonial-meta">
+                    <p className={style.TestimonialText}>{item.bodyText}</p>
+                    <p className={style.TestimonialMeta}>
                       {item.name}, {item.position}{" "}
                       <strong>• {item.organization}</strong>
                     </p>
                     <motion.div
-                      className="logo-image-box"
+                      className={style.LogoImageBox}
                       animate={{ scale: [0, 0.5, 1] }}
                       transition={{ times: [0, 0.5, 1], delay: 0.2 }}
                     >
                       <img src={item.logo} alt="Company logo" />
                     </motion.div>
-                    <div className="user-image-box">
+                    <div className={style.UserImageBox}>
                       <img src={item.image} alt="User Name" />
                     </div>
                   </motion.div>
@@ -103,7 +102,7 @@ function Testimonials() {
         </div>
       </div>
       {!isSmall && (
-        <div className="testomonial-button">
+        <div className={style.TestimonialButton}>
           <button>
             150 + incubators/accelerators using AcceleratorApp &nbsp;
             <img src={ArrowForwardIcon} alt="Arrow forward icon" />
