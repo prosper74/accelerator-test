@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import classNames from "classnames";
 
-import { useIsMedium, useIsSmall } from "../Hooks/mediaQuery";
+import { useIsLarge, useIsSmall } from "../Hooks/mediaQuery";
 import { useSwipeable } from "react-swipeable";
 import { data } from "./TestimonialData";
 import ArrowForwardIcon from "../../images/arrow_forward_icon.svg";
@@ -21,7 +21,7 @@ interface SlidesProps {
 }
 
 function Testimonials() {
-  const isMedium = useIsMedium();
+  const isLarge = useIsLarge();
   const isSmall = useIsSmall();
   const [activeIndicator, setActiveIndicator] = useState(0);
 
@@ -43,7 +43,7 @@ function Testimonials() {
         <div className={style.LeftSide}>
           <h3 className={style.Title}>What our customers say</h3>
 
-          {isSmall && (
+          {isLarge && (
             <div className={style.TestimonialButton}>
               <button>
                 150 + incubators/accelerators using AcceleratorApp &nbsp;
